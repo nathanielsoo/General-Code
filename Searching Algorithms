@@ -1,0 +1,29 @@
+###Searches for linear data structures
+
+import numpy as np
+lst = list(np.random.randint(1, 10000, 100)) #initialising the initial list to search
+
+def linear_search(lst, search_value):
+    for i in lst:
+        if i == search_value:
+            return True
+    return False
+    
+def binary_search(lst, search_value):
+    if len(lst) == 0:
+        return False
+    else:
+        lst = sorted(lst)
+        mid = len(lst)//2
+        if search_value == lst[mid]:
+            return True
+        elif search_value < lst[mid]:
+            return binary_search(lst[:mid], search_value)
+        else:
+            return binary_search(lst[mid+1:], search_value)
+
+print(lst)
+linear_search(lst, 15)
+binary_search(lst, 15)
+
+
