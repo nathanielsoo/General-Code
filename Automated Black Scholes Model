@@ -11,9 +11,9 @@ import math
 
 # Initialising Variables
 ticker = (input("Ticker: ")).upper()
-option_type = (input("What is the option type? C/P: ")).upper()
-strike = float(input("What is the strike price (without $): "))
-T = int(input("Number of days: "))
+option_type = (input("Option type, C/P: ")).upper()
+strike = float(input("Strike price: "))
+T = int(input("DTE: "))
 R = float(input("Risk-free rate for the next year, in decimal form (i.e. 5% is 0.05): "))
 
 # Calculate Daily Returns and Standard Deviation
