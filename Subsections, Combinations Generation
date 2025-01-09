@@ -1,0 +1,18 @@
+###code to generate all possible ordered subsections of length n, from an array
+def combinations(array, n):
+    def helper(curr, remaining):
+        if len(curr) == n:
+            res.append(curr[:]) #append shallow copy of curr
+        
+        else:
+            for i in range(0, len(remaining), 1):
+                curr.append(remaining[i])
+                helper(curr, remaining[i+1:])
+                curr.pop()
+    
+    res = []
+    helper([], array)
+    return res
+
+#test
+combinations([1, 2, 3, 4, 5, 6], 3)
